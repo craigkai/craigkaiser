@@ -20,14 +20,14 @@
 
 <style>
 	.bg-home-sm {
-		background-image: url('home/background-home-mobile.jpg');
+		background-image: url('/home/background-home-mobile.jpg');
 	}
 
 	.md\:bg-home-md {
-		background-image: url('home/background-home-tablet.jpg');
+		background-image: url('/home/background-home-tablet.jpg');
 	}
 
 	.lg\:bg-home {
-		background-image: url('home/background-home-desktop.jpg');
+		background-image: url('/home/background-home-desktop.jpg');
 	}
 </style>
