@@ -1,16 +1,9 @@
 <script lang="ts">
 	import Typewriter from 'svelte-typewriter';
 	const greetings = ['Fullstack Engineer', 'Entrepreneur'];
-
-	const backgroundSmall = 'home/background-home-mobile.jpg';
-	const backgroundMedium = 'home/background-home-tablet.jpg';
-	const backgroundLarge = 'home/background-home-desktop.jpg';
 </script>
 
-<body
-	style="--backgroundSmall:url({backgroundSmall});--backgroundMedium:url({backgroundMedium});--backgroundLarge:url({backgroundLarge});"
-	class="bg-home-sm md:bg-home-md lg:bg-home bg-no-repeat bg-cover h-screen text-white text-xl"
->
+<body class="bg-home-sm md:bg-home-md lg:bg-home bg-no-repeat bg-cover h-screen text-white text-xl">
 	<div class="flex flex-col items-center p-16 justify-content-center justify-center">
 		<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Craig Kaiser</div>
 
@@ -26,14 +19,14 @@
 
 <style>
 	.bg-home-sm {
-		background-image: var(--backgroundSmall);
+		background-image: url('home/background-home-mobile.jpg');
 	}
 
 	.md\:bg-home-md {
-		background-image: var(--backgroundMedium);
+		background-image: url('home/background-home-tablet.jpg');
 	}
 
 	.lg\:bg-home {
-		background-image: var(--backgroundLarge);
+		background-image: url('home/background-home-desktop.jpg');
 	}
 </style>
