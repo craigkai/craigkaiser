@@ -2,8 +2,6 @@
 	import Typewriter from 'svelte-typewriter';
 	import Icon from '@iconify/svelte';
 
-	import Header from '$components/Header.svelte';
-
 	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Tech Enthusiast', 'Other Stuff'];
 
 	const creativeSpaces = [
@@ -24,8 +22,6 @@
 		}
 	];
 </script>
-
-<Header />
 
 <div class="flex flex-col items-center p-16 justify-content-center justify-center">
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Craig Kaiser</div>
@@ -65,13 +61,6 @@
 			{/each}
 		</ul>
 	</div>
-</div>
-
-<div class="flex justify-center absolute inset-x-0 bottom-0">
-	source code on <a
-		class="ml-1 font-small text-blue-600 dark:text-blue-500 hover:underline"
-		href="https://github.com/craigkai/craigkaiser">Github</a
-	>
 </div>
 
 <div class="absolute inset-y-1/2 inset-x-3/4 group inline-block cursor-help">

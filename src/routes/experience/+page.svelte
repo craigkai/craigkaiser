@@ -1,11 +1,8 @@
 <script lang="ts">
-	import Header from '$components/Header.svelte';
 	import Icon from '@iconify/svelte';
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 </script>
-
-<Header />
 
 <div class="flex flex-col lg:p-16 md:m-4 sm:m-4">
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Experience:</div>
