@@ -6,16 +6,16 @@ import supabase from '$lib/supabase';
 
 /** @type {import('./$types').PageLoad} */
 export async function load() {
-    let res = await supabase.from('projects').select('*');
+    const { data, error } = await supabase.from('projects').select('*');
 
-    if (res.error) {
-        console.error(`Failed to retrieve projects :/ : ${JSON.stringify(res.error)}`);
+    if (error) {
+        console.error(`Failed to retrieve projects: ${JSON.stringify(error)}`);
         return {
             projects: []
         };
     }
 
     return {
-        projects: res?.data
+        projects: data
     };
 }

@@ -1,6 +1,10 @@
 <script lang="ts">
 	import Typewriter from 'svelte-typewriter';
 	import Icon from '@iconify/svelte';
+	import Views from '$components/Views.svelte';
+
+	/** @type {import('./$types').PageData} */
+	export let data: any;
 
 	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Tech Enthusiast', 'Other Stuff'];
 
@@ -91,3 +95,5 @@
 	/>
 	<div class="text-xs text-gray-400">(Skills)</div>
 </div>
+
+<Views views={data?.viewsCount} />
