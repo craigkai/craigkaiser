@@ -76,8 +76,8 @@
 
 <div class="absolute inset-y-1/2 inset-x-3/4 group inline-block cursor-help">
 	<span
-		class="absolute hidden group-hover:flex -top-2 -right-3 translate-x-full w-48 px-2 py-1 bg-gray-700 rounded-lg text-center text-white text-sm before:content-[''] before:absolute before:top-1/2 before:right-[100%] before:-translate-y-1/2 before:border-8 before:border-y-transparent before:border-l-transparent before:border-r-gray-700"
-		>This website is built using:
+		class="absolute hidden group-hover:flex -left-10 -top-2 -translate-y-full w-48 px-2 py-1 bg-gray-700 rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-1/2 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700"
+	>
 		<ul>
 			<li>Sveltejs (Sveltekit)</li>
 			<li>Tailwindcss (Styling)</li>
@@ -86,5 +86,18 @@
 	</span>
 
 	<Icon icon="solar:satellite-bold-duotone" style="font-size: 40px;" />
-	<div class="text-xs text-gray-400">(Hover me)</div>
+	<div class="text-xs text-gray-400">(Tech?)</div>
+</div>
+
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div
+	class="absolute inset-y-3/4 inset-x-1/4 group inline-block cursor-pointer"
+	on:click={() => alert('Some animation here')}
+>
+	<Icon
+		icon="streamline:ecology-science-planet-solar-system-ring-planet-saturn-space-astronomy"
+		style="font-size: 40px;"
+	/>
+	<div class="text-xs text-gray-400">(Skills)</div>
 </div>
