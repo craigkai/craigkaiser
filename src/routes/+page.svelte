@@ -2,6 +2,8 @@
 	import Typewriter from 'svelte-typewriter';
 	import Icon from '@iconify/svelte';
 
+	import Header from '$components/Header.svelte';
+
 	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Rust'];
 
 	const creativeSpaces = [
@@ -22,6 +24,8 @@
 		}
 	];
 </script>
+
+<Header />
 
 <div class="flex flex-col items-center p-16 justify-content-center justify-center">
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Craig Kaiser</div>
@@ -46,7 +50,7 @@
 	</div>
 </div>
 
-<div class="flex flex-row justify-center">
+<div class="flex flex-col items-center p-16 justify-content-center justify-center">
 	<div>
 		<ul>
 			{#each creativeSpaces as { label, source, link }}
@@ -68,4 +72,19 @@
 		class="ml-1 font-small text-blue-600 dark:text-blue-500 hover:underline"
 		href="https://github.com/craigkai/craigkaiser">Github</a
 	>
+</div>
+
+<div class="absolute inset-y-1/2 inset-x-3/4 group inline-block cursor-help">
+	<span
+		class="absolute hidden group-hover:flex -top-2 -right-3 translate-x-full w-48 px-2 py-1 bg-gray-700 rounded-lg text-center text-white text-sm before:content-[''] before:absolute before:top-1/2 before:right-[100%] before:-translate-y-1/2 before:border-8 before:border-y-transparent before:border-l-transparent before:border-r-gray-700"
+		>This website is built using:
+		<ul>
+			<li>Sveltejs (Sveltekit)</li>
+			<li>Tailwindcss (Styling)</li>
+			<li>Supabase (Postgres DB)</li>
+		</ul>
+	</span>
+
+	<Icon icon="solar:satellite-bold-duotone" style="font-size: 40px;" />
+	<div class="text-xs text-gray-400">(Hover me)</div>
 </div>
