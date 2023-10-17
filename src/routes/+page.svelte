@@ -4,7 +4,7 @@
 
 	import Header from '$components/Header.svelte';
 
-	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Rust'];
+	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Tech Enthusiast', 'Other Stuff'];
 
 	const creativeSpaces = [
 		{
