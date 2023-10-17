@@ -2,7 +2,7 @@
 	import Typewriter from 'svelte-typewriter';
 	import Icon from '@iconify/svelte';
 
-	const greetings = ['Fullstack Engineer', 'Entrepreneur'];
+	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Rust'];
 
 	const creativeSpaces = [
 		{
@@ -16,7 +16,7 @@
 			link: 'https://www.linkedin.com/in/craig-kaiser/'
 		},
 		{
-			source: 'mdi:paper-outline',
+			source: 'bx:file',
 			label: 'resume',
 			link: 'https://github.com/craigkai/craigkaiser/blob/b721f6beeeacae0afd30dda677e9b18aa25ef8e8/static/kaiser_craig.pdf'
 		}
