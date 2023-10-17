@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Typewriter from 'svelte-typewriter';
 	import Icon from '@iconify/svelte';
-	import Views from '$components/Views.svelte';
+	import Visitors from '$components/Visitors.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -28,6 +28,8 @@
 </script>
 
 <div class="flex flex-col items-center p-16 justify-content-center justify-center">
+	<div class="top-0 absolute left-4 p-4"><Visitors views={data?.viewsCount} /></div>
+
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Craig Kaiser</div>
 
 	<div class="self-start mt-4">
@@ -95,5 +97,3 @@
 	/>
 	<div class="text-xs text-gray-400">(Skills)</div>
 </div>
-
-<Views views={data?.viewsCount} />

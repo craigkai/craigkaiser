@@ -1,0 +1,3 @@
+<script lang="ts"></script>
+
+About page coming soon...
