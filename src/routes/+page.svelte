@@ -18,7 +18,7 @@
 		{
 			source: 'mdi:paper-outline',
 			label: 'Resume',
-			link: '/resume.pdf'
+			link: 'https://github.com/craigkai/craigkaiser/blob/b721f6beeeacae0afd30dda677e9b18aa25ef8e8/static/kaiser_craig.pdf'
 		}
 	];
 </script>
