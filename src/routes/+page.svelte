@@ -2,6 +2,7 @@
 	import Typewriter from 'svelte-typewriter';
 	import Icon from '@iconify/svelte';
 	import Visitors from '$components/Visitors.svelte';
+	import Constellation from '$components/Constellation.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -87,7 +88,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div
+<!-- <div
 	class="absolute inset-y-3/4 inset-x-1/4 group inline-block cursor-pointer"
 	on:click={() => alert('Some animation here')}
 >
@@ -96,4 +97,6 @@
 		style="font-size: 40px;"
 	/>
 	<div class="text-xs text-gray-400">(Skills)</div>
-</div>
+</div> -->
+
+<Constellation />
