@@ -9,6 +9,10 @@
 	$: path = $page.url.pathname;
 </script>
 
+<a href="/" class="absolute m-2">
+	<img src="logo.png" alt="logo" width="100" />
+</a>
+
 <div class="flex w-full place-content-end z-10">
 	{#if open}
 		<div class="rounded-lg p-2 absolute right-12 top-2">

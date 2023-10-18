@@ -29,8 +29,6 @@
 </script>
 
 <div class="flex flex-col items-center p-16 justify-content-center justify-center">
-	<div class="top-0 -z-5 fixed left-4 p-4"><Visitors views={data?.viewsCount} /></div>
-
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Craig Kaiser</div>
 
 	<div class="self-start mt-4">
@@ -100,3 +98,5 @@
 </div> -->
 
 <Constellation />
+
+<Visitors views={data?.viewsCount} />
