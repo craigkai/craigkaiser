@@ -3,7 +3,7 @@
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 
-	const projects = data?.projects.sort((a, b) => {
+	const projects = data?.projects.sort((a: { id: number }, b: { id: number }) => {
 		return a.id - b.id;
 	});
 </script>
