@@ -14,7 +14,6 @@ export async function load() {
             projects: []
         };
     }
-    console.log(data.sort((a, b) => { a.id < b.id }))
 
     return {
         projects: data.sort((a, b) => { a.id - b.id })

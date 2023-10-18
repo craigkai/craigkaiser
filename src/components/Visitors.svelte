@@ -2,4 +2,6 @@
 	export let views: number;
 </script>
 
-<div class="flex flex-row place-content-center w-full">Visitors (unique) count #{views}</div>
+<div class="z-0 place-content-center lg:w-full md:w-full w-1/2">
+	Visitors (unique) count #{views}
+</div>
