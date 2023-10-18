@@ -83,7 +83,7 @@
 		</ul>
 	</span>
 
-	<Icon icon="solar:satellite-bold-duotone" style="font-size: 40px;" />
+	<Icon icon="solar:satellite-bold-duotone" style="font-size: 60px;" />
 </div>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
