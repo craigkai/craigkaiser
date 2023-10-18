@@ -13,8 +13,7 @@
 					<a class="py-2 block hover:text-blue-400" href="/">Home</a>
 				</li>
 				<li transition:fly={{ y: -15, delay: 50 * 1 }}>
-					<!-- svelte-ignore a11y-invalid-attribute -->
-					<a class="py-2 block opacity-50 cursor-not-allowed" href="#">About</a>
+					<a class="py-2 block hover:text-blue-400" href="/about">About</a>
 				</li>
 				<li transition:fly={{ y: -15, delay: 50 * 3 }}>
 					<a class="py-2 block hover:text-blue-400" href="/experience">Experience</a>
