@@ -2,11 +2,11 @@
 (Because we can)
 */
 
-import supabase from '$lib/supabase';
+import { getProjects } from '$lib/commands';
 
 /** @type {import('./$types').PageLoad} */
 export async function load() {
-    const { data, error } = await supabase.from('projects').select('*');
+    const { data, error } = await getProjects();
 
     if (error) {
         console.error(`Failed to retrieve projects: ${JSON.stringify(error)}`);
@@ -16,6 +16,6 @@ export async function load() {
     }
 
     return {
-        projects: data.sort((a, b) => { a.id - b.id })
+        projects: data.sort((a, b) => { return a.id - b.id; })
     };
 }

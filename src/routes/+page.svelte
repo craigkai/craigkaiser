@@ -87,13 +87,10 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- <div
-	class="absolute inset-y-3/4 inset-x-1/4 group inline-block cursor-pointer"
+	class="absolute inset-y-1/4 inset-x-1/4 group inline-block cursor-pointer"
 	on:click={() => alert('Some animation here')}
 >
-	<Icon
-		icon="streamline:ecology-science-planet-solar-system-ring-planet-saturn-space-astronomy"
-		style="font-size: 40px;"
-	/>
+	<img src="galaxy.gif" alt="galaxy" width="123" />
 	<div class="text-xs text-gray-400">(Skills)</div>
 </div> -->
 
