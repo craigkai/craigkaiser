@@ -7,14 +7,14 @@
 
 	export let terminalActive: boolean;
 
-	function handlekey(e: any) {
+	async function handlekey(e: any) {
 		const command: string = text.replace('--', '');
 		if (e.key === 'Enter') {
 			if (text === ':q') {
 				terminalActive = false;
 			} else {
 				if (commands[command]) {
-					output = commands[command]();
+					output = JSON.stringify(await commands[command]());
 					text = '';
 				} else {
 					output = 'command not found!';
@@ -38,7 +38,8 @@
 		class="rounded-lg row-start-4 row-span-6 col-start-4 col-span-6 bg-black opacity-50"
 		id="terminal-window"
 	></section>
-	<section class="row-start-4 row-span-6 col-start-4 col-span-6 m-2" id="terminal">
+
+	<section class="overflow-hidden row-start-4 row-span-6 col-start-4 col-span-6 m-2" id="terminal">
 		<span class="ml-1">{@html output}</span><br />
 		<span class="blink-me mr-1">{pretext}</span>
 		<input

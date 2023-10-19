@@ -1,11 +1,11 @@
 /* Load our views from Supabase
 */
 
-import { getUniqueViews } from "$lib/commands";
+import { views } from "$lib/commands";
 
 /** @type {import('./$types').PageLoad} */
 export async function load() {
-    const { count, error } = await getUniqueViews();
+    const { count, error } = await views();
 
     if (error) {
         console.error(`Failed to retrieve views: ${JSON.stringify(error)}`);
