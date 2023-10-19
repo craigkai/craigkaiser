@@ -9,7 +9,7 @@ export function help() {
 }
 
 export function clear() {
-    return '';
+    return;
 }
 
 export async function projects() {

@@ -14,7 +14,12 @@
 				terminalActive = false;
 			} else {
 				if (commands[command]) {
-					output = JSON.stringify(await commands[command]());
+					let res = await commands[command]();
+					if (typeof res === 'object') {
+						output = JSON.stringify(res) || '';
+					} else {
+						output = res || '';
+					}
 					text = '';
 				} else {
 					output = 'command not found!';
@@ -39,12 +44,15 @@
 		id="terminal-window"
 	></section>
 
-	<section class="overflow-hidden row-start-4 row-span-6 col-start-4 col-span-6 m-2" id="terminal">
+	<section
+		class="z-20 overflow-scroll row-start-4 row-span-6 col-start-4 col-span-6 m-2"
+		id="terminal"
+	>
 		<span class="ml-1">{@html output}</span><br />
 		<span class="blink-me mr-1">{pretext}</span>
 		<input
 			use:init
-			class="absolute bg-transparent appearance-none border-none focus:outline-none text-white"
+			class="bg-transparent appearance-none border-none focus:outline-none text-white"
 			bind:value={text}
 		/>
 	</section>
