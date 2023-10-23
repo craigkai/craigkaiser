@@ -9,6 +9,13 @@
 </script>
 
 <div class="flex flex-col lg:p-16 md:m-4 sm:m-4">
+	<span
+		>This page pulls data from <a
+			class="text-blue-600 dark:text-blue-500 hover:underline"
+			href="https://supabase.com/">Supabase</a
+		>
+		to populate the pages data!</span
+	>
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Experience:</div>
 
 	<div class="grid grid-rows-1 gap-4 m-16 md:w-1/2 lg:w-1/2 divide-solid divide-y divide-white">
@@ -40,7 +47,6 @@
 			</div>
 		{/each}
 	</div>
-	<div>here</div>
 </div>
 
 <style>
