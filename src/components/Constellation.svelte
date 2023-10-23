@@ -12,7 +12,7 @@
             after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent
             after:border-b-transparent after:border-t-gray-700"
 		>
-			<div class="text-md text-gray-400">About me</div>
+			<div class="text-md">About me</div>
 		</span>
 	</a>
 </div>
@@ -28,7 +28,7 @@
             after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent
             after:border-b-transparent after:border-t-gray-700"
 		>
-			<div class="text-md text-gray-400">Experience</div>
+			<div class="text-md">Experience</div>
 		</span>
 	</a>
 </div>
