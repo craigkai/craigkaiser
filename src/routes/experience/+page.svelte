@@ -20,7 +20,7 @@
 							<Icon class="stroke-blue-400" icon={technology?.icon} />
 						</div>
 					{/each}
-					<a class="text-xl place-items-center" href={project.link}>{project.name}:</a>
+					<span class="text-xl place-items-center">{@html project.name}:</span>
 				</div>
 				<span class="text-sm ml-6 description">{@html project.description}</span>
 
