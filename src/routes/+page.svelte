@@ -23,7 +23,7 @@
 		{
 			source: 'bx:file',
 			label: 'resume',
-			link: 'https://github.com/craigkai/craigkaiser/blob/83d0c2187ad0a61f61a3c5d929527e6b61eb566b/static/kaiser_craig.pdf'
+			link: '/static/kaiser_craig.pdf'
 		}
 	];
 </script>
