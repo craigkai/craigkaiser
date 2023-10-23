@@ -70,9 +70,9 @@
 
 <div class="absolute inset-y-1/2 inset-x-3/4 group inline-block cursor-help">
 	<span
-		class="absolute flex flex-col hidden group-hover:flex -right-20 -top-2 -translate-y-full w-48 px-2 py-1 bg-gray-700 rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-3/4 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700"
+		class="absolute flex flex-col hidden group-hover:flex -right-20 -top-2 -translate-y-full w-48 px-2 py-1 bg-blue-600 rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-3/4 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700"
 	>
-		<div class="text-xs text-gray-400">What tech does this site use?</div>
+		<div class="text-xs">What tech does this site use?</div>
 
 		<ul>
 			<li>Sveltejs (Sveltekit)</li>
