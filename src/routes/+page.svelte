@@ -23,7 +23,7 @@
 		{
 			source: 'bx:file',
 			label: 'resume',
-			link: '/static/kaiser_craig.pdf'
+			link: '/kaiser_craig.pdf'
 		}
 	];
 </script>
