@@ -3,9 +3,10 @@
 	import Icon from '@iconify/svelte';
 	import Visitors from '$components/Visitors.svelte';
 	import Constellation from '$components/Constellation.svelte';
+	import Tooltip from '$components/Tooltip.svelte';
+	import type { PageData } from './$types';
 
-	/** @type {import('./$types').PageData} */
-	export let data: any;
+	export let data: PageData;
 
 	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Tech Enthusiast', 'Other Stuff'];
 
@@ -27,6 +28,10 @@
 		}
 	];
 </script>
+
+<svelte:head>
+	<title>Craig Kaiser - Fullstack Engineer</title>
+</svelte:head>
 
 <div class="flex flex-col items-center p-16 justify-content-center justify-center">
 	<div class="lg:text-5xl self-start font-bold leading-tight text-3xl">Craig Kaiser</div>
@@ -56,11 +61,17 @@
 		<ul>
 			{#each creativeSpaces as { label, source, link }}
 				<li>
-					<a class="flex" href={link}>
-						<span class="m-2 grid place-content-center">
+					<a
+						class="flex focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black rounded p-1"
+						href={link}
+						aria-label={label === 'github' ? 'View my GitHub profile' : label === 'linkedin' ? 'Connect on LinkedIn' : 'Download my resume'}
+						target={label === 'github' || label === 'linkedin' ? '_blank' : undefined}
+						rel={label === 'github' || label === 'linkedin' ? 'noopener noreferrer' : undefined}
+					>
+						<span class="m-2 grid place-content-center" aria-hidden="true">
 							<Icon icon={source} />
 						</span>
-						<span class="m-2 hover:uppercase">{label}</span>
+						<span class="m-2 hover:uppercase capitalize">{label}</span>
 					</a>
 				</li>
 			{/each}
@@ -68,32 +79,32 @@
 	</div>
 </div>
 
-<div class="absolute inset-y-1/2 inset-x-3/4 group inline-block cursor-help">
-	<span
-		class="absolute flex flex-col hidden group-hover:flex -right-20 -top-2 -translate-y-full w-48 px-2 py-1 bg-blue-600 rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-3/4 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700"
-	>
+<div
+	class="absolute inset-y-1/2 inset-x-3/4 group inline-block cursor-help hidden lg:block"
+	role="button"
+	tabindex="0"
+	aria-label="Technologies used in this site"
+>
+	<Tooltip position="top">
 		<div class="text-xs">What tech does this site use?</div>
 
-		<ul>
+		<ul class="text-left">
 			<li>Sveltejs (Sveltekit)</li>
 			<li>Tailwindcss (Styling)</li>
 			<li>Supabase (Postgres DB)</li>
 		</ul>
-	</span>
+	</Tooltip>
 
-	<Icon icon="solar:satellite-bold-duotone" style="font-size: 60px;" />
+	<Icon icon="solar:satellite-bold-duotone" style="font-size: 60px;" aria-hidden="true" />
 </div>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- <div
-	class="absolute inset-y-1/4 inset-x-1/4 group inline-block cursor-pointer"
-	on:click={() => alert('Some animation here')}
->
-	<img src="galaxy.gif" alt="galaxy" width="123" />
-	<div class="text-xs text-gray-400">(Skills)</div>
-</div> -->
 
 <Constellation />
 
-<Visitors views={data?.viewsCount} />
+<Visitors views={data?.viewsCount} error={data?.viewsCount === 0} />
+
+<div class="fixed bottom-4 right-4 text-xs text-gray-400 opacity-50 hover:opacity-100 transition-opacity">
+	<div class="bg-gray-800 rounded px-3 py-2 border border-gray-600">
+		<span class="font-mono">Tip: Press <kbd class="bg-gray-700 px-1 rounded">:</kbd><kbd class="bg-gray-700 px-1 rounded">i</kbd> for terminal mode</span>
+	</div>
+</div>

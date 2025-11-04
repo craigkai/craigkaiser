@@ -1,34 +1,43 @@
 <script lang="ts">
+	import Tooltip from '$components/Tooltip.svelte';
 </script>
 
-<div class="absolute top-3/4 left-1/4">
-	<a class="group inline-block cursor-pointer" href="/about">
-		<img src="star.png" alt="star" width="105" class="hover:scale-150" />
+<div class="absolute top-3/4 left-1/4 hidden sm:block">
+	<a
+		class="group inline-block cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+		href="/about"
+		aria-label="Navigate to About page"
+	>
+		<img
+			src="star.png"
+			alt=""
+			width="105"
+			height="105"
+			loading="lazy"
+			class="hover:scale-150 transition-transform duration-200"
+			aria-hidden="true"
+		/>
 
-		<span
-			class="absolute flex flex-col hidden group-hover:flex -left-10 -top-0
-            -translate-y-full w-48 px-2 py-1 bg-blue-700 rounded-lg text-center
-            text-white text-sm after:content-[''] after:absolute after:left-1/2
-            after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent
-            after:border-b-transparent after:border-t-gray-700"
-		>
-			<div class="text-md">About me</div>
-		</span>
+		<Tooltip text="About me" position="top" />
 	</a>
 </div>
 
-<div class="absolute md:left-40 lg:left-20 top-80 sm:left-5">
-	<a class="group inline-block cursor-pointer" href="/experience">
-		<img src="star.png" alt="star" width="105" class="hover:scale-150" />
+<div class="absolute md:left-40 lg:left-20 top-80 sm:left-5 hidden sm:block">
+	<a
+		class="group inline-block cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+		href="/experience"
+		aria-label="Navigate to Experience page"
+	>
+		<img
+			src="star.png"
+			alt=""
+			width="105"
+			height="105"
+			loading="lazy"
+			class="hover:scale-150 transition-transform duration-200"
+			aria-hidden="true"
+		/>
 
-		<span
-			class="absolute flex flex-col hidden group-hover:flex -left-10 -top-0
-            -translate-y-full w-48 px-2 py-1 bg-blue-700 rounded-lg text-center
-            text-white text-sm after:content-[''] after:absolute after:left-1/2
-            after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent
-            after:border-b-transparent after:border-t-gray-700"
-		>
-			<div class="text-md">Experience</div>
-		</span>
+		<Tooltip text="Experience" position="top" />
 	</a>
 </div>

@@ -4,7 +4,7 @@
 	import Footer from '$components/Footer.svelte';
 	import CLI from '$components/CLI.svelte';
 
-	let lastSeenKey: String = '';
+	let lastSeenKey: string = '';
 	let terminalActive: boolean = false;
 
 	function handlekey(e: any) {

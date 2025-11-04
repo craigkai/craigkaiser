@@ -9,37 +9,45 @@
 	$: path = $page.url.pathname;
 </script>
 
-<a href="/" class="absolute m-2">
-	<img src="logo.png" alt="logo" width="100" />
+<a
+	href="/"
+	class="absolute m-2 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded"
+	aria-label="Home"
+>
+	<img src="logo.png" alt="Craig Kaiser logo" width="100" />
 </a>
 
 <div class="flex w-full place-content-end z-10">
 	{#if open}
-		<div class="rounded-lg p-2 absolute right-12 top-2">
+		<nav class="rounded-lg p-2 absolute right-12 top-2" aria-label="Main navigation">
 			<ul>
 				<li transition:fly={{ y: -15, delay: 50 * 0 }}>
-					<a class:text-blue-400={path === '/'} class="py-2 block hover:text-blue-400" href="/"
-						>Home</a
+					<a
+						class:text-blue-400={path === '/'}
+						class="py-2 block hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-2"
+						href="/">Home</a
 					>
 				</li>
 				<li transition:fly={{ y: -15, delay: 50 * 1 }}>
 					<a
 						class:text-blue-400={path === '/about'}
-						class="py-2 block hover:text-blue-400"
+						class="py-2 block hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-2"
 						href="/about">About</a
 					>
 				</li>
 				<li transition:fly={{ y: -15, delay: 50 * 3 }}>
 					<a
 						class:text-blue-400={path === '/experience'}
-						class="py-2 block hover:text-blue-400"
+						class="py-2 block hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 rounded px-2"
 						href="/experience">Experience</a
 					>
 				</li>
 			</ul>
-		</div>
+		</nav>
 	{/if}
 	<div class="top-0">
-		<Hamburger bind:open --color="white" --padding="20px" --type="Elastic" />
+		<div class="focus-within:ring-2 focus-within:ring-blue-400 rounded">
+			<Hamburger bind:open --color="white" --padding="20px" --type="Elastic" ariaLabel="Menu" />
+		</div>
 	</div>
 </div>
