@@ -6,16 +6,18 @@ import { projects } from '$lib/commands';
 
 /** @type {import('./$types').PageLoad} */
 export async function load() {
-    const { data, error } = await projects();
+	const { data, error } = await projects();
 
-    if (error) {
-        console.error(`Failed to retrieve projects: ${JSON.stringify(error)}`);
-        return {
-            projects: []
-        };
-    }
+	if (error) {
+		console.error(`Failed to retrieve projects: ${JSON.stringify(error)}`);
+		return {
+			projects: []
+		};
+	}
 
-    return {
-        projects: data.sort((a, b) => { return a.id - b.id; })
-    };
+	return {
+		projects: data.sort((a, b) => {
+			return a.id - b.id;
+		})
+	};
 }

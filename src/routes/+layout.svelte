@@ -3,6 +3,7 @@
 	import Header from '$components/Header.svelte';
 	import Footer from '$components/Footer.svelte';
 	import CLI from '$components/CLI.svelte';
+	import Particles from '$components/Particles.svelte';
 
 	let lastSeenKey: string = '';
 	let terminalActive: boolean = false;
@@ -21,6 +22,7 @@
 <body
 	class="bg-home-sm md:bg-home-md lg:bg-home bg-no-repeat bg-cover min-h-screen text-white text-xl"
 >
+	<Particles />
 	{#if terminalActive}
 		<CLI bind:terminalActive />
 	{:else}

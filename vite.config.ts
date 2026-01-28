@@ -9,7 +9,7 @@ export default defineConfig({
 	},
 	server: {
 		fs: {
-			allow: [resolve("/static/kaiser_craig.pdf")]
+			allow: [resolve('/static/kaiser_craig.pdf')]
 		}
 	}
 });

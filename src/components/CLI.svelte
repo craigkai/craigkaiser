@@ -40,19 +40,19 @@
 	class="absolute grid grid-rows-12 grid-cols-12 w-full h-full z-10 terminal-container"
 >
 	<section
-		class="rounded-lg row-start-4 row-span-6 col-start-4 col-span-6 bg-black opacity-50"
+		class="rounded-xl row-start-4 row-span-6 col-start-4 col-span-6 bg-black/80 backdrop-blur-md border border-purple-500/30"
 		id="terminal-window"
 	></section>
 
 	<section
-		class="z-20 overflow-scroll row-start-4 row-span-6 col-start-4 col-span-6 m-2"
+		class="z-20 overflow-scroll row-start-4 row-span-6 col-start-4 col-span-6 m-4"
 		id="terminal"
 	>
-		<span class="ml-1">{@html output}</span><br />
-		<span class="blink-me mr-1">{pretext}</span>
+		<span class="ml-1 text-cyan-400">{@html output}</span><br />
+		<span class="blink-me mr-1 text-pink-400">{pretext}</span>
 		<input
 			use:init
-			class="bg-transparent appearance-none border-none focus:outline-none text-white"
+			class="bg-transparent appearance-none border-none focus:outline-none text-white caret-purple-400"
 			bind:value={text}
 		/>
 	</section>
@@ -60,16 +60,44 @@
 
 <style>
 	.terminal-container {
-		background: rgb(2, 0, 36);
 		background: linear-gradient(
-			90deg,
-			rgba(2, 0, 36, 1) 0%,
-			rgba(9, 67, 121, 1) 13%,
-			rgba(0, 212, 255, 1) 100%
+			135deg,
+			rgba(6, 182, 212, 0.1) 0%,
+			rgba(168, 85, 247, 0.15) 50%,
+			rgba(236, 72, 153, 0.1) 100%
 		);
+		animation: gradient-shift 10s ease infinite;
 	}
+
+	@keyframes gradient-shift {
+		0%, 100% {
+			background: linear-gradient(
+				135deg,
+				rgba(6, 182, 212, 0.1) 0%,
+				rgba(168, 85, 247, 0.15) 50%,
+				rgba(236, 72, 153, 0.1) 100%
+			);
+		}
+		33% {
+			background: linear-gradient(
+				135deg,
+				rgba(168, 85, 247, 0.1) 0%,
+				rgba(236, 72, 153, 0.15) 50%,
+				rgba(6, 182, 212, 0.1) 100%
+			);
+		}
+		66% {
+			background: linear-gradient(
+				135deg,
+				rgba(236, 72, 153, 0.1) 0%,
+				rgba(6, 182, 212, 0.15) 50%,
+				rgba(168, 85, 247, 0.1) 100%
+			);
+		}
+	}
+
 	.blink-me {
-		animation: blinker 2s linear infinite;
+		animation: blinker 1s ease-in-out infinite;
 	}
 
 	@keyframes blinker {

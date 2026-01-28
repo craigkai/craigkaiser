@@ -9,26 +9,29 @@
 </svelte:head>
 
 <article class="flex justify-content-center flex-col sm:w-full lg:w-2/3 xl:w-1/2 mx-auto px-4 py-8">
-	<img
-		src="me.jpg"
-		alt="Craig Kaiser - Software Engineer"
-		width="345"
-		height="auto"
-		loading="lazy"
-		class="mx-auto mb-8 rounded-lg shadow-lg"
-	/>
+	<div class="relative mx-auto mb-8 group">
+		<div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
+		<img
+			src="me.jpg"
+			alt="Craig Kaiser - Software Engineer"
+			width="345"
+			height="auto"
+			loading="lazy"
+			class="relative rounded-lg shadow-lg"
+		/>
+	</div>
 
-	<div class="space-y-4 text-lg leading-relaxed">
-		<section>
-			<h2 class="text-2xl font-bold mb-4 text-blue-400">Welcome!</h2>
+	<div class="space-y-6 text-lg leading-relaxed">
+		<section class="p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
+			<h2 class="text-2xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Welcome!</h2>
 			<p>
 				I'm Craig Kaiser, a dedicated software engineer driven by an unwavering passion for
 				technology and the creation of innovative, inspiring products.
 			</p>
 		</section>
 
-		<section>
-			<h2 class="text-2xl font-bold mb-4 text-blue-400">My Journey</h2>
+		<section class="p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-purple-500/20 hover:border-cyan-500/40 transition-colors duration-300">
+			<h2 class="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">My Journey</h2>
 			<p>
 				My journey into the world of software engineering took an unconventional path. Originally
 				schooled as an Electrical Engineer, I couldn't resist the allure of coding and its potential
@@ -41,8 +44,8 @@
 			</p>
 		</section>
 
-		<section>
-			<h2 class="text-2xl font-bold mb-4 text-blue-400">What Drives Me</h2>
+		<section class="p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-purple-500/20 hover:border-pink-500/40 transition-colors duration-300">
+			<h2 class="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">What Drives Me</h2>
 			<p>
 				As a software engineer, I relish the opportunity to bring ideas to life, harnessing the
 				power of technology to solve real-world problems and shape the digital landscape. I find
@@ -57,8 +60,8 @@
 			</p>
 		</section>
 
-		<section>
-			<h2 class="text-2xl font-bold mb-4 text-blue-400">Let's Connect</h2>
+		<section class="p-4 rounded-lg bg-black/30 backdrop-blur-sm border border-purple-500/20 hover:border-purple-500/40 transition-colors duration-300">
+			<h2 class="text-2xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Let's Connect</h2>
 			<p>
 				If you share my passion for technology and the pursuit of groundbreaking solutions, I'd love
 				to connect and collaborate. Let's embark on a journey of innovation and bring remarkable
