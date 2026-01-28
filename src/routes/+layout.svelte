@@ -4,11 +4,14 @@
 	import Footer from '$components/Footer.svelte';
 	import CLI from '$components/CLI.svelte';
 	import Particles from '$components/Particles.svelte';
+	import type { Snippet } from 'svelte';
 
-	let lastSeenKey: string = '';
-	let terminalActive: boolean = false;
+	let { children }: { children: Snippet } = $props();
 
-	function handlekey(e: any) {
+	let lastSeenKey = $state('');
+	let terminalActive = $state(false);
+
+	function handlekey(e: KeyboardEvent) {
 		if (lastSeenKey === ':' && e.key === 'i' && !terminalActive) {
 			terminalActive = true;
 		}
@@ -16,32 +19,13 @@
 	}
 </script>
 
-<svelte:window on:keypress={handlekey} />
+<svelte:window onkeypress={handlekey} />
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<body
-	class="bg-home-sm md:bg-home-md lg:bg-home bg-no-repeat bg-cover min-h-screen text-white text-xl"
->
-	<Particles />
-	{#if terminalActive}
-		<CLI bind:terminalActive />
-	{:else}
-		<Header />
-		<slot />
-		<Footer />
-	{/if}
-</body>
-
-<style>
-	.bg-home-sm {
-		background-image: url('/home/background-home-mobile.jpg');
-	}
-
-	.md\:bg-home-md {
-		background-image: url('/home/background-home-tablet.jpg');
-	}
-
-	.lg\:bg-home {
-		background-image: url('/home/background-home-desktop.jpg');
-	}
-</style>
+<Particles />
+{#if terminalActive}
+	<CLI bind:terminalActive />
+{:else}
+	<Header />
+	{@render children()}
+	<Footer />
+{/if}

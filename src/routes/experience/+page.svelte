@@ -3,7 +3,7 @@
 	import Tooltip from '$components/Tooltip.svelte';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 
 	const projects = data?.projects.sort((a: { id: number }, b: { id: number }) => {
 		return a.id - b.id;

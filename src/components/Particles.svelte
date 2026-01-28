@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let particles: Array<{
+	let particles = $state<Array<{
 		id: number;
 		x: number;
 		y: number;
@@ -9,7 +9,7 @@
 		duration: number;
 		delay: number;
 		color: string;
-	}> = [];
+	}>>([]);
 
 	const colors = ['#06b6d4', '#a855f7', '#ec4899'];
 

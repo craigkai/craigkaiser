@@ -1,6 +1,5 @@
 <script lang="ts">
-	export let width: string = '170';
-	export let height: string = '40';
+	let { width = '170', height = '40' }: { width?: string; height?: string } = $props();
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" {width} {height} class="logo">

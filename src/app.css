@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-home-sm {
+	background-image: url('/home/background-home-mobile.jpg');
+}
+
+@media (min-width: 768px) {
+	.md\:bg-home-md {
+		background-image: url('/home/background-home-tablet.jpg');
+	}
+}
+
+@media (min-width: 1024px) {
+	.lg\:bg-home {
+		background-image: url('/home/background-home-desktop.jpg');
+	}
+}

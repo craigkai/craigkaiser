@@ -1,13 +1,11 @@
 <script lang="ts">
-	import { Hamburger } from 'svelte-hamburgers';
+	import Hamburger from './Hamburger.svelte';
 	import { fly } from 'svelte/transition';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Logo from './Logo.svelte';
 
-	let open: boolean = false;
-	let path: string = '';
-
-	$: path = $page.url.pathname;
+	let open = $state(false);
+	let path = $derived(page.url.pathname);
 </script>
 
 <a
@@ -51,7 +49,7 @@
 	{/if}
 	<div class="top-0">
 		<div class="focus-within:ring-2 focus-within:ring-purple-400 rounded">
-			<Hamburger bind:open --color="white" --padding="20px" --type="Elastic" ariaLabel="Menu" />
+			<Hamburger bind:open ariaLabel="Menu" />
 		</div>
 	</div>
 </div>

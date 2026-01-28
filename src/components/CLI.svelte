@@ -1,20 +1,20 @@
 <script lang="ts">
 	import * as commands from '$lib/commands';
 
-	let pretext: string = '>';
-	let output: string = '';
-	let text: string = '';
+	let pretext = '>';
+	let output = $state('');
+	let text = $state('');
 
-	export let terminalActive: boolean;
+	let { terminalActive = $bindable(false) }: { terminalActive: boolean } = $props();
 
-	async function handlekey(e: any) {
+	async function handlekey(e: KeyboardEvent) {
 		const command: string = text.replace('--', '');
 		if (e.key === 'Enter') {
 			if (text === ':q') {
 				terminalActive = false;
 			} else {
-				if (commands[command]) {
-					let res = await commands[command]();
+				if (commands[command as keyof typeof commands]) {
+					let res = await commands[command as keyof typeof commands]();
 					if (typeof res === 'object') {
 						output = JSON.stringify(res) || '';
 					} else {
@@ -34,9 +34,9 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
-	on:keypress={handlekey}
+	onkeypress={handlekey}
 	class="absolute grid grid-rows-12 grid-cols-12 w-full h-full z-10 terminal-container"
 >
 	<section

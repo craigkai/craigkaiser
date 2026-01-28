@@ -1,7 +1,5 @@
 <script lang="ts">
-	export let views: number | undefined = undefined;
-	export let loading: boolean = false;
-	export let error: boolean = false;
+	let { views, loading = false, error = false }: { views?: number; loading?: boolean; error?: boolean } = $props();
 </script>
 
 <div class="bottom-0 z-10 fixed left-4 p-4">

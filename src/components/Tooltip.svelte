@@ -1,6 +1,7 @@
 <script lang="ts">
-	export let text: string = '';
-	export let position: 'top' | 'bottom' | 'left' | 'right' = 'top';
+	import type { Snippet } from 'svelte';
+
+	let { text = '', position = 'top', children }: { text?: string; position?: 'top' | 'bottom' | 'left' | 'right'; children?: Snippet } = $props();
 
 	const positionClasses = {
 		top: '-translate-y-full -top-2 left-1/2 -translate-x-1/2 after:left-1/2 after:top-[100%] after:-translate-x-1/2 after:border-x-transparent after:border-b-transparent after:border-t-purple-900',
@@ -18,7 +19,9 @@
 	]}"
 	role="tooltip"
 >
-	<slot>
+	{#if children}
+		{@render children()}
+	{:else}
 		{text}
-	</slot>
+	{/if}
 </span>

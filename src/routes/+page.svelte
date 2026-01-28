@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Typewriter from 'svelte-typewriter';
+	import Typewriter from '$components/Typewriter.svelte';
 	import Icon from '@iconify/svelte';
 	import Visitors from '$components/Visitors.svelte';
 	import Constellation from '$components/Constellation.svelte';
 	import Tooltip from '$components/Tooltip.svelte';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 
 	const greetings = ['Fullstack Engineer', 'Entrepreneur', 'Tech Enthusiast', 'Other Stuff'];
 
@@ -49,11 +49,7 @@
 				<div
 					class="relative px-4 py-3 bg-black/90 rounded-lg leading-none flex items-center backdrop-blur-sm border border-white/10"
 				>
-					<Typewriter mode="loop" interval={100}>
-						{#each greetings as greeting}
-							<h1 class="text-white">{greeting}</h1>
-						{/each}
-					</Typewriter>
+					<h1 class="text-white"><Typewriter texts={greetings} interval={100} /></h1>
 				</div>
 			</div>
 		</div>
