@@ -17,7 +17,7 @@ export async function load() {
 
 	return {
 		projects: data.sort((a, b) => {
-			return a.id - b.id;
+			return a.sort_order - b.sort_order;
 		})
 	};
 }

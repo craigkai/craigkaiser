@@ -5,8 +5,8 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const projects = data?.projects.sort((a: { id: number }, b: { id: number }) => {
-		return a.id - b.id;
+	const projects = data?.projects.sort((a: { sort_order: number }, b: { sort_order: number }) => {
+		return a.sort_order - b.sort_order;
 	});
 </script>
 
